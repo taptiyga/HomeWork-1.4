@@ -11,20 +11,23 @@
 
 <body>
     <div class="container">
-        console.log('Start')</br>
-        setTimeout(() => {</br>
-        &nbsp&nbsp&nbspconsole.log('Macrotask')</br>
-        }, 0)</br>
-        Promise.resolve().then(() => {</br>
-        &nbsp&nbsp&nbspconsole.log('Microtask')</br>
-        })</br>
-        console.log('End')</br>
-        Start-макротаск и синхронная операция идет сразу в стек вызвов</br>
-        Macrotask-макротаск и асинхронная операция, идет в Web API, где обрабатывается и отправляется в Callback queue,
-        выполняется в последнюю очередь</br>
-        Microtask-микротаск помещается в Microtask queue и выполняется после синхронных макротасков</br>
-        End-макротаск и синхронная операция идет сразу в стек вызвов</br>
-        Порядок выполнения Start=>End=>Microtask=>Macrotask</br>
+        <div class="func">
+            console.log('Start')</br>
+            setTimeout(() => {</br>
+            &nbsp&nbsp&nbspconsole.log('Macrotask')</br>
+            }, 0)</br>
+            Promise.resolve().then(() => {</br>
+            &nbsp&nbsp&nbspconsole.log('Microtask')</br>
+            })</br>
+            console.log('End')</br></div>
+        <p>
+            Start-макротаск и синхронная операция идет сразу в стек вызвов</br>
+            Macrotask-макротаск и асинхронная операция, идет в Web API, где обрабатывается и отправляется в Callback
+            queue,
+            выполняется в последнюю очередь</br>
+            Microtask-микротаск помещается в Microtask queue и выполняется после синхронных макротасков</br>
+            End-макротаск и синхронная операция идет сразу в стек вызвов</br>
+            Порядок выполнения Start=>End=>Microtask=>Macrotask</br></p>
     </div>
 </body>
 
